@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
@@ -24,6 +25,6 @@ app.get("/about",(req,res)=>{
 })
 
 
-app.listen("3000",(req,res) =>{
+app.listen(process.env.PORT|| "3000",(req,res) =>{
     console.log("server has started")
-})
+});
